@@ -1,0 +1,15 @@
+# User unit template. Install once on the host, then the deploy scripts restart it:
+#   cp deploy/percentage-calculator.service ~/.config/systemd/user/
+#   systemctl --user daemon-reload && systemctl --user enable --now percentage-calculator.service
+[Unit]
+Description=Percentage calculator
+After=network-online.target
+
+[Service]
+Environment=PORT=8090
+Environment=QUIET=1
+ExecStart=/usr/bin/env python3 %h/.local/share/percentage-calculator/current/server.py
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
