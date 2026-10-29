@@ -6,7 +6,7 @@ Description=Percentage calculator
 After=network-online.target
 
 [Service]
-Environment=PORT=8090
+Environment=PORT=47613
 Environment=QUIET=1
 ExecStart=/usr/bin/env python3 %h/.local/share/percentage-calculator/current/server.py
 Restart=on-failure

@@ -34,12 +34,12 @@ class Handler(SimpleHTTPRequestHandler):
         super().log_message(fmt, *args)
 
 
-def make_server(host: str = "0.0.0.0", port: int = 8090) -> ThreadingHTTPServer:
+def make_server(host: str = "0.0.0.0", port: int = 47613) -> ThreadingHTTPServer:
     return ThreadingHTTPServer((host, port), partial(Handler, directory=str(STATIC)))
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", "8090"))
+    port = int(os.environ.get("PORT", "47613"))
     srv = make_server("0.0.0.0", port)
     print(f"Serving on http://0.0.0.0:{port}")
     try:

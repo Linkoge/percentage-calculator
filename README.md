@@ -8,7 +8,7 @@ and amounts exceeding the total. Responsive, with automatic light/dark theme.
 ## Run
 
 ```
-python server.py            # http://0.0.0.0:8090
+python server.py            # http://0.0.0.0:47613
 PORT=9000 python server.py  # custom port
 ```
 
@@ -34,7 +34,7 @@ python -m pytest -q -m smoke   # smoke only
 `.linko-deploy.json` declares the deploy setup: `scripts/deploy.sh` copies `server.py`, `calc.py` and `static/`
 into a new release under `~/.local/share/percentage-calculator/releases/`, switches the `current` symlink to it and
 restarts the user unit `percentage-calculator.service`. `scripts/backup.sh` archives the live release first,
-`scripts/health.sh` checks `/api/calc` on `PORT` (default 8090), and `scripts/rollback.sh` returns to the release
+`scripts/health.sh` checks `/api/calc` on `PORT` (default 47613), and `scripts/rollback.sh` returns to the release
 that was live before the last deploy.
 
 The unit is not installed by the scripts. Install it once on the host:
