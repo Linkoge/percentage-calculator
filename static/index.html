@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Percentage Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="card">
+  <header>
+    <h1>Percentage Calculator</h1>
+    <p class="sub">Enter the whole, then see what share each amount takes.</p>
+  </header>
+
+  <section class="total">
+    <label for="total">Total (100%)</label>
+    <div class="field big"><input id="total" inputmode="decimal" autocomplete="off" placeholder="e.g. 1200" value=""></div>
+    <p class="hint" id="total-hint" role="status"></p>
+  </section>
+
+  <section>
+    <ul id="rows" class="rows"></ul>
+    <button id="add" class="add" type="button">+ Add amount</button>
+  </section>
+
+  <section class="summary" aria-live="polite">
+    <div class="stat"><span>Sum of amounts</span><strong id="sum">–</strong><small id="sum-pct"></small></div>
+    <div class="stat"><span id="rem-label">Remaining</span><strong id="rem">–</strong><small id="rem-pct"></small></div>
+    <div class="bar total-bar"><i id="total-fill"></i></div>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
